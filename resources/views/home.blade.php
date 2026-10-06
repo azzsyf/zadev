@@ -1134,6 +1134,30 @@
                 flex-direction: column;
             }
         }
+
+        section[id] {
+            scroll-margin-top: 90px;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--cyan);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
     </style>
 </head>
 
@@ -1151,14 +1175,15 @@
             </a>
 
             <nav class="nav-links" id="navLinks">
-                <a href="#home" class="active">Home</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#about">About</a>
+                <a href="#home" class="active">Beranda</a>
+                <a href="#services">Layanan</a>
+                <a href="#portfolio">Portofolio</a>
+                <a href="#about">Tentang</a>
                 <a href="#contact" class="nav-cta">Konsultasi Gratis</a>
             </nav>
 
-            <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+            <button type="button" class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false"
+                aria-controls="navLinks">☰</button>
         </div>
     </header>
 
@@ -1166,8 +1191,8 @@
         <section class="hero" id="home">
             <div class="container hero-grid">
                 <div class="reveal">
-                    <span class="eyebrow"><i></i> Web & Digital Studio</span>
-                    <h1>Build a Brand That <span class="gradient-text">Gets Remembered.</span></h1>
+                    <span class="eyebrow"><i></i> Web & Studio Digital</span>
+                    <h1>Bangun Brand yang <span class="gradient-text">Tak Terlupakan.</span></h1>
                     <p class="hero-copy">
                         Kami membantu bisnis membangun identitas digital yang terlihat profesional,
                         dipercaya pelanggan, dan dirancang untuk mendukung pertumbuhan bisnis.
@@ -1175,13 +1200,13 @@
 
                     <div class="hero-actions">
                         <a href="#contact" class="btn btn-primary">Mulai Project <span>→</span></a>
-                        <a href="#portfolio" class="btn btn-ghost">Lihat Portfolio</a>
+                        <a href="#portfolio" class="btn btn-ghost">Lihat Portofolio</a>
                     </div>
 
                     <div class="hero-proof">
                         <div class="proof-item"><strong>50+</strong><span>Project Digital</span></div>
-                        <div class="proof-item"><strong>98%</strong><span>Client Satisfaction</span></div>
-                        <div class="proof-item"><strong>24/7</strong><span>Support Responsive</span></div>
+                        <div class="proof-item"><strong>98%</strong><span>Kepuasan Klien</span></div>
+                        <div class="proof-item"><strong>24/7</strong><span>Dukungan Responsif</span></div>
                     </div>
                 </div>
 
@@ -1193,14 +1218,14 @@
                             <div class="screen">
                                 <div class="screen-top">
                                     <span class="mini-logo">Z A D E V . I D</span>
-                                    <div class="mini-nav"><span>Home</span><span>Services</span><span>Work</span></div>
+                                    <div class="mini-nav"><span>Beranda</span><span>Layanan</span><span>Karya</span></div>
                                 </div>
                                 <div class="screen-main">
-                                    <small>WEB & DIGITAL STUDIO</small>
-                                    <h3>Turn Ideas Into <span>Digital Impact.</span></h3>
+                                    <small>WEB & STUDIO DIGITAL</small>
+                                    <h3>Ubah Ide Menjadi <span>Dampak Digital.</span></h3>
                                     <p>Website modern untuk membuat brand Anda lebih profesional dan mudah ditemukan.
                                     </p>
-                                    <span class="screen-btn">Start Project →</span>
+                                    <span class="screen-btn">Mulai Sekarang →</span>
                                 </div>
                                 <div class="screen-card">
                                     <div class="bar"></div>
@@ -1214,7 +1239,7 @@
 
                     <div class="floating-card">
                         <div class="fc-top">
-                            <div class="fc-icon">✦</div><b>Digital Growth</b>
+                            <div class="fc-icon">✦</div><b>Pertumbuhan Digital</b>
                         </div>
                         <p>Design yang bukan hanya menarik, tapi punya tujuan untuk membantu bisnis berkembang.</p>
                     </div>
@@ -1235,19 +1260,19 @@
 
         {{-- ==================== MARQUEE ==================== --}} <div class="marquee-wrap">
             <div class="marquee">
-                <span>Branding <b>✦</b></span><span>Web Design <b>✦</b></span><span>Landing Page
-                    <b>✦</b></span><span>Digital Marketing <b>✦</b></span><span>Business Website
-                    <b>✦</b></span><span>E-Commerce <b>✦</b></span>
-                <span>Branding <b>✦</b></span><span>Web Design <b>✦</b></span><span>Landing Page
-                    <b>✦</b></span><span>Digital Marketing <b>✦</b></span><span>Business Website
-                    <b>✦</b></span><span>E-Commerce <b>✦</b></span>
+                <span>Branding <b>✦</b></span><span>Desain Web <b>✦</b></span><span>Landing Page
+                    <b>✦</b></span><span>Pemasaran Digital <b>✦</b></span><span>Website Bisnis
+                    <b>✦</b></span><span>Toko Online <b>✦</b></span>
+                <span>Branding <b>✦</b></span><span>Desain Web <b>✦</b></span><span>Landing Page
+                    <b>✦</b></span><span>Pemasaran Digital <b>✦</b></span><span>Website Bisnis
+                    <b>✦</b></span><span>Toko Online <b>✦</b></span>
             </div>
         </div>
 
         {{-- ==================== SERVICES ==================== --}} <section id="services">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="section-kicker">What We Do</span>
+                <span class="section-kicker">Apa yang Kami Kerjakan</span>
                     <h2 class="section-title">Digital presence yang dibangun untuk <span
                             class="gradient-text">menghasilkan.</span></h2>
                     <p class="section-desc">Dari identitas brand sampai website siap jualan, semua dirancang agar bisnis
@@ -1257,14 +1282,14 @@
                 <div class="services-grid">
                     <article class="service reveal">
                         <div class="service-icon">✦</div>
-                        <h3>Brand Identity</h3>
+                        <h3>Identitas Brand</h3>
                         <p>Logo, visual identity, warna, typography, dan direction visual untuk membangun brand yang
                             konsisten.</p>
                         <a href="#contact">Pelajari →</a>
                     </article>
                     <article class="service reveal">
                         <div class="service-icon">⌁</div>
-                        <h3>Business Website</h3>
+                        <h3>Website Bisnis</h3>
                         <p>Website company profile modern yang membuat bisnis terlihat profesional dan meningkatkan
                             kepercayaan calon pelanggan.</p>
                         <a href="#contact">Pelajari →</a>
@@ -1278,13 +1303,13 @@
                     </article>
                     <article class="service reveal">
                         <div class="service-icon">◇</div>
-                        <h3>Digital Marketing</h3>
+                        <h3>Pemasaran Digital</h3>
                         <p>Strategi konten dan campaign digital yang membantu brand menjangkau audiens yang tepat.</p>
                         <a href="#contact">Pelajari →</a>
                     </article>
                     <article class="service reveal">
                         <div class="service-icon">◫</div>
-                        <h3>Online Store</h3>
+                        <h3>Toko Online</h3>
                         <p>Toko online yang rapi, cepat, mobile-friendly, dan mudah dikelola untuk mendukung penjualan.
                         </p>
                         <a href="#contact">Pelajari →</a>
@@ -1303,17 +1328,17 @@
         {{-- ==================== ABOUT ==================== --}} <section id="about">
             <div class="container split">
                 <div class="feature-panel reveal">
-                    <span class="pill one">Strategy</span>
-                    <span class="pill two">Creative</span>
-                    <span class="pill three">Technology</span>
-                    <span class="pill four">Growth</span>
+                    <span class="pill one">Strategi</span>
+                    <span class="pill two">Kreatif</span>
+                    <span class="pill three">Teknologi</span>
+                    <span class="pill four">Pertumbuhan</span>
                     <div class="feature-center">
                         <div class="z-big">Z</div>
                     </div>
                 </div>
 
                 <div class="reveal">
-                    <span class="section-kicker">Why ZADEV.ID</span>
+                    <span class="section-kicker">Mengapa ZADEV.ID</span>
                     <h2 class="section-title">Bukan sekadar membuat website. Kami membangun <span
                             class="gradient-text">kesan pertama.</span></h2>
                     <p class="section-desc">Website adalah salah satu titik pertama calon pelanggan mengenal bisnis
@@ -1326,7 +1351,7 @@
                             </div>
                         </div>
                         <div class="check"><span class="check-mark">✓</span>
-                            <div><b>Fast & responsive</b>
+                            <div><b>Cepat & Responsif</b>
                                 <p>Nyaman dibuka dari desktop, tablet, maupun smartphone.</p>
                             </div>
                         </div>
@@ -1343,35 +1368,35 @@
         {{-- ==================== PORTFOLIO ==================== --}} <section id="portfolio">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="section-kicker">Selected Work</span>
+                    <span class="section-kicker">Karya Pilihan</span>
                     <h2 class="section-title">Beberapa karya yang kami <span class="gradient-text">banggakan.</span>
                     </h2>
-                    <p class="section-desc">Contoh konsep portfolio — ganti dengan project asli Anda.</p>
+                    <p class="section-desc">Contoh konsep portofolio — ganti dengan proyek asli Anda.</p>
                 </div>
 
                 <div class="portfolio-grid">
                     <article class="project large reveal">
                         <div class="project-bg"></div>
                         <div class="project-content">
-                            <span class="tag">Corporate Website</span>
-                            <h3>Modern Business Platform</h3>
-                            <p>Web Design • Development • Strategy</p>
+                            <span class="tag">Website Perusahaan</span>
+                            <h3>Platform Bisnis Modern</h3>
+                            <p>Desain Web • Pengembangan • Strategi</p>
                         </div>
                     </article>
                     <article class="project reveal">
                         <div class="project-bg"></div>
                         <div class="project-content">
                             <span class="tag">Landing Page</span>
-                            <h3>Digital Campaign</h3>
-                            <p>Conversion • Creative • Copy</p>
+                            <h3>Kampanye Digital</h3>
+                            <p>Konversi • Kreatif • Konten</p>
                         </div>
                     </article>
                     <article class="project reveal">
                         <div class="project-bg"></div>
                         <div class="project-content">
                             <span class="tag">E-Commerce</span>
-                            <h3>Online Store Experience</h3>
-                            <p>UI/UX • Development • Optimization</p>
+                            <h3>Pengalaman Toko Online</h3>
+                            <p>UI/UX • Pengembangan • Optimasi</p>
                         </div>
                     </article>
                 </div>
@@ -1381,25 +1406,25 @@
         <section>
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="section-kicker">How It Works</span>
-                    <h2 class="section-title">Dari ide sampai <span class="gradient-text">go live.</span></h2>
+                    <span class="section-kicker">Cara Kerja Kami</span>
+                    <h2 class="section-title">Dari ide sampai <span class="gradient-text">tayang.</span></h2>
                 </div>
 
                 <div class="process">
-                    <div class="step reveal"><span class="step-num">01 / DISCOVER</span>
+                    <div class="step reveal"><span class="step-num">01 / TEMUKAN</span>
                         <h3>Kenali bisnis</h3>
                         <p>Kami memahami bisnis, target audience, kompetitor, dan tujuan project.</p>
                     </div>
-                    <div class="step reveal"><span class="step-num">02 / STRATEGY</span>
+                    <div class="step reveal"><span class="step-num">02 / STRATEGI</span>
                         <h3>Susun strategi</h3>
                         <p>Menentukan struktur, pesan utama, visual direction, dan user journey.</p>
                     </div>
-                    <div class="step reveal"><span class="step-num">03 / CREATE</span>
-                        <h3>Build & refine</h3>
+                    <div class="step reveal"><span class="step-num">03 / BUAT</span>
+                        <h3>Bangun & sempurnakan</h3>
                         <p>Design dan development dikerjakan dengan komunikasi yang transparan.</p>
                     </div>
-                    <div class="step reveal"><span class="step-num">04 / LAUNCH</span>
-                        <h3>Go live</h3>
+                    <div class="step reveal"><span class="step-num">04 / TAYANG</span>
+                        <h3>Siap tayang</h3>
                         <p>Website dipublish dan siap digunakan untuk mendukung aktivitas marketing.</p>
                     </div>
                 </div>
@@ -1409,7 +1434,7 @@
         {{-- ==================== CONTACT / CTA ==================== --}} <section id="contact">
             <div class="container">
                 <div class="cta reveal">
-                    <span class="section-kicker">Let's Build Something</span>
+                    <span class="section-kicker">Ayo Mulai Sesuatu</span>
                     <h2>Siap membuat brand Anda terlihat <span class="gradient-text">lebih profesional?</span></h2>
                     <p>Ceritakan kebutuhan Anda. Kami bantu menentukan solusi digital yang paling sesuai untuk bisnis
                         Anda.</p>
@@ -1426,76 +1451,68 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#home" class="brand"><span class="brand-mark">Z</span><span>ZADEV.ID</span></a>
-                    <p>Web & Digital Studio yang membantu bisnis membangun digital presence yang modern, profesional,
+                    <p>Web & Studio Digital yang membantu bisnis membangun kehadiran digital yang modern, profesional,
                         dan berorientasi pada pertumbuhan.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4><a href="#services">Brand Identity</a><a href="#services">Business Website</a><a
-                        href="#services">Landing Page</a><a href="#services">Digital Marketing</a>
+                    <h4>Layanan</h4><a href="#services">Identitas Brand</a><a href="#services">Website Bisnis</a><a
+                        href="#services">Landing Page</a><a href="#services">Pemasaran Digital</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4><a href="#about">About</a><a href="#portfolio">Portfolio</a><a
-                        href="#contact">Contact</a>
+                    <h4>Perusahaan</h4><a href="#about">Tentang</a><a href="#portfolio">Portofolio</a><a
+                        href="#contact">Kontak</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4><a href="mailto:hello@zadev.id">hello@zadev.id</a><a
+                    <h4>Kontak</h4><a href="mailto:hello@zadev.id">hello@zadev.id</a><a
                         href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp</a><a
                         href="#">Instagram</a>
                 </div>
             </div>
-            <div class="copyright"><span>© {{ date('Y') }} ZADEV.ID. All rights reserved.</span><span>Transforming
-                    Vision Into Digital Presence.</span></div>
+            <div class="copyright"><span>© {{ date('Y') }} ZADEV.ID. Hak cipta dilindungi.</span><span>Mengubah
+                    Visi Menjadi Kehadiran Digital.</span></div>
         </div>
     </footer>
 
     <script>
-        const navbar = document.getElementById('navbar');
-        const menuBtn = document.getElementById('menuBtn');
-        const navLinks = document.getElementById('navLinks');
+        (function () {
+            var navbar = document.getElementById('navbar');
+            var menuBtn = document.getElementById('menuBtn');
+            var navLinks = document.getElementById('navLinks');
 
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 30);
-        });
+            function onScroll() {
+                if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 30);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
 
-        menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-        navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => navLinks.classList.remove('open'));
-        });
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', function () {
+                    var isOpen = navLinks.classList.toggle('open');
+                    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+                navLinks.querySelectorAll('a').forEach(function (a) {
+                    a.addEventListener('click', function () {
+                        navLinks.classList.remove('open');
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('show');
-            });
-        }, {
-            threshold: .12
-        });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
-
-    <script>
-        const navbar = document.getElementById('navbar');
-        const menuBtn = document.getElementById('menuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 30);
-        });
-
-        menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-        navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => navLinks.classList.remove('open'));
-        });
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('show');
-            });
-        }, {
-            threshold: .12
-        });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            var revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && revealEls.length) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: .12 });
+                revealEls.forEach(function (el) { observer.observe(el); });
+            } else {
+                revealEls.forEach(function (el) { el.classList.add('show'); });
+            }
+        })();
     </script>
 
 </body>
